@@ -1,15 +1,18 @@
 package com.example.justjavasdas;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import java.text.NumberFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 /**
 
  This app displays an order form to order coffee
  */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given price on the screen.
      */
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance(Locale.US).format(number));
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(NumberFormat.getCurrencyInstance(new Locale("en", "US")).format(number));
     }
 }
