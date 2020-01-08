@@ -14,6 +14,7 @@ import java.util.Locale;
  */
 
 public class MainActivity extends AppCompatActivity {
+    int numberOfCoffees = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
      This method is called when the order is clicked.
      */
     public void submitOrder(View view) {
-        display((77*2)+1);
+        numberOfCoffees = numberOfCoffees + 1;
+        display(numberOfCoffees);
+        displayPrice(numberOfCoffees * 5);
     }
     /**
 
