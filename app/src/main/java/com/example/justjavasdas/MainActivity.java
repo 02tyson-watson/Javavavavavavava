@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
      This method is called when the order is clicked.
      */
     public void submitOrder(View view) {
-
+        TextView ordered = (TextView)findViewById(R.id.ordered);
+        ordered.setText("Successfully Ordered!");
     }
 
     public void plus_quantity(View view){
@@ -37,9 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void minus_quantity (View view){
-        numberOfCoffees--;
-        display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+        if (numberOfCoffees < 1) {
+            display(0);
+            displayPrice(numberOfCoffees * 5);
+        }
+        else {
+            numberOfCoffees--;
+            display(numberOfCoffees);
+            displayPrice(numberOfCoffees * 5);
+        }
     }
     /**
 
