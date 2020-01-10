@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
@@ -14,62 +15,62 @@
         android:text="QUANTITY"
         android:textSize="30sp"
         android:id="@+id/quantity"/>
-    <TextView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="-"
+            android:id="@+id/minus"
+            android:layout_below="@+id/quantity_text_view"
+            android:onClick="minus_quantity"
+            />
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="30sp"
         android:id="@+id/quantity_text_view"
-        android:layout_below="@+id/plus"
-        android:paddingLeft="20sp"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ORDER"
-        android:textSize="20sp"
-        android:layout_below="@+id/price_text_view"
-        android:id="@+id/button"
-        android:onClick="submitOrder"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ordered"
-        android:text=""
-        android:textSize="30dp"
-        android:layout_below="@+id/button"/>
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"/>
+        <Button
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="+"
+            android:id="@+id/plus"
+            android:onClick="plus_quantity"
+            />
+    </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PRICE"
         android:id="@+id/price"
         android:textSize="30sp"
-        android:layout_below="@+id/minus"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="30sp"
-        android:layout_below="@+id/price"
         android:paddingLeft="20sp"
         android:id="@+id/price_text_view"
         />
     <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="-"
-        android:id="@+id/minus"
-        android:layout_below="@+id/quantity_text_view"
-        android:onClick="minus_quantity"
-        />
-    <Button
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="+"
-        android:layout_below="@+id/quantity"
-        android:id="@+id/plus"
-        android:onClick="plus_quantity"
-        />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ORDER"
+        android:textSize="20sp"
+        android:id="@+id/button"
+        android:onClick="submitOrder"/>
 
-</RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ordered"
+        android:text=""
+        android:textSize="30dp"/>
+</LinearLayout>
