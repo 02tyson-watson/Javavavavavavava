@@ -29,23 +29,22 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         TextView ordered = (TextView)findViewById(R.id.ordered);
         ordered.setText("Successfully Ordered!");
+        displayPrice(numberOfCoffees * 5);
     }
 
     public void plus_quantity(View view){
         numberOfCoffees++;
         display(numberOfCoffees);
-        displayPrice(numberOfCoffees * 5);
+
     }
 
     public void minus_quantity (View view){
         if (numberOfCoffees < 1) {
             display(0);
-            displayPrice(numberOfCoffees * 5);
         }
         else {
             numberOfCoffees--;
             display(numberOfCoffees);
-            displayPrice(numberOfCoffees * 5);
         }
     }
     /**
