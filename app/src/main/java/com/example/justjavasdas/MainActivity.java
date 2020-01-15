@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         TextView ordered = (TextView)findViewById(R.id.ordered);
         ordered.setText("Successfully Ordered!");
         displayPrice(numberOfCoffees * 5);
+        String priceMessage = "Free";
+        displayMessage(priceMessage);
     }
 
     public void plus_quantity(View view){
@@ -62,5 +64,13 @@ public class MainActivity extends AppCompatActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance(new Locale("en", "US")).format(number));
+    }
+
+    /**
+     * This method displays the given text on the screen.
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
